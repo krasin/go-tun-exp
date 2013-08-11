@@ -9,6 +9,25 @@ sudo apt-get install sendip openvpn
 git clone https://github.com/krasin/go-tun-exp
 cd go-tun-exp
 ./create-iface.sh # will ask for sudo permissions
+```
+
+At this point we have tun2 network interface:
+```
+$ ifconfig
+...
+
+tun2      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  
+          inet addr:10.0.0.1  P-t-P:10.0.0.1  Mask:255.255.255.0
+          UP POINTOPOINT NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:29 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:100 
+          RX bytes:0 (0.0 B)  TX bytes:2090 (2.0 KB)
+```
+
+Now, let's add a listener to this interface:
+
+```
 go build -o go-tun-exp main.go
 ./go-tun-exp
 ```
