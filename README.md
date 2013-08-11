@@ -1,8 +1,8 @@
-Linux TUN device explorations.
+### Linux TUN device explorations.
 
 For the explanation what happens here, please, read this awesome post: [Tun/Tap interface tutorial](http://backreference.org/2010/03/26/tuntap-interface-tutorial/).
 
-To use this (assuming that you already have Go 1.1.1 or newer installed:
+To use this (assuming that you already have Go 1.1.1 or newer installed):
 
 ```
 sudo apt-get install sendip openvpn
@@ -19,7 +19,7 @@ Let's send a UDP packet from a different terminal:
 sudo sendip -p ipv4 -is 192.168.1.81 -p udp -us 5070 -ud 12233 -d "Hello" -v 10.0.0.2
 ```
 
-We should see the following output from go-tun-exp:
+You should see the following output from go-tun-exp:
 
 ```
 2013/08/11 13:43:31 Read 33 bytes from tun:
