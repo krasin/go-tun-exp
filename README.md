@@ -1,4 +1,4 @@
-### Linux TUN device explorations.
+### Linux TUN device explorations
 
 For the explanation what happens here, please, read this awesome post: [Tun/Tap interface tutorial](http://backreference.org/2010/03/26/tuntap-interface-tutorial/).
 
