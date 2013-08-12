@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"os/exec"
 	"syscall"
 	"unsafe"
 )
@@ -43,6 +44,14 @@ func main() {
 		log.Fatalf("Failed to ioctl tun device, errno: %d", errno)
 	}
 	fmt.Printf("ioctl succeeded!\n")
+
+	if err = exec.Command("/sbin/ip", "link", "set", "tun2", "up").Run(); err != nil {
+		log.Fatal("Unable to ip link up: ", err)
+	}
+
+	if err = exec.Command("/sbin/ip", "addr", "add", "10.0.0.1/24", "dev", "tun2").Run(); err != nil {
+		log.Fatal("Unable to set ipv4 addr: ", err)
+	}
 
 	buf := make([]byte, 4096)
 	for {
