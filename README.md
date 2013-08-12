@@ -9,11 +9,11 @@ go get github.com/krasin/go-tun-exp
 sudo `which go-tun-exp`
 ```
 
-At this point we have tun2 network interface:
+At this point we have tun-exp network interface:
 ```
 $ ifconfig
 ...
-tun2      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  
+tun-exp   Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  
           inet addr:10.0.0.1  P-t-P:10.0.0.1  Mask:255.255.255.0
           UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
           RX packets:0 errors:0 dropped:0 overruns:0 frame:0
@@ -21,6 +21,9 @@ tun2      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00
           collisions:0 txqueuelen:500 
           RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
 ```
+
+Btw, you can change the interface name by using -iface option to go-tun-exp.
+The name must be shorter than 16 symbols (Linux kernel restriction, see IFNAMSIZ definition).
 
 Let's try to ping 10.0.0.2 (from a different terminal):
 
