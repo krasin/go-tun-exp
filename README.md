@@ -13,14 +13,13 @@ At this point we have tun2 network interface:
 ```
 $ ifconfig
 ...
-
 tun2      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  
           inet addr:10.0.0.1  P-t-P:10.0.0.1  Mask:255.255.255.0
-          UP POINTOPOINT NOARP MULTICAST  MTU:1500  Metric:1
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
           RX packets:0 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:29 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:100 
-          RX bytes:0 (0.0 B)  TX bytes:2090 (2.0 KB)
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:500 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
 ```
 
 Let's try to ping 10.0.0.2 (from a different terminal):
